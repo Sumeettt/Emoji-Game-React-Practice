@@ -1,0 +1,27 @@
+.emoji-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff33;
+  border: 2px solid #ffffff33;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 150px;
+  min-height: 150px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .emoji-card {
+    min-width: 200px;
+    min-height: 200px;
+  }
+}
+
+.emoji-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

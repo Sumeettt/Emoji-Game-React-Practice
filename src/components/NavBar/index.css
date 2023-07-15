@@ -1,0 +1,36 @@
+nav {
+  background-color: #ffffff33;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+}
+
+.game-logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.game-title {
+  font-size: 20px;
+  font-family: roboto;
+  color: #ffffff;
+}
+
+.score-container {
+  display: flex;
+}
+
+.score-text {
+  font-size: 20px;
+  font-family: roboto;
+  color: #ffffff;
+}
+
+.top-score-text {
+  font-size: 20px;
+  font-family: roboto;
+  color: #ffffff;
+  margin-left: 25px;
+}
