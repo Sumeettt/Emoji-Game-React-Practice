@@ -12,32 +12,34 @@ class EmojiGame extends Component {
     listOfEmojisClicked: [],
   }
 
-  emojiClicked = id => {
-    console.log(id)
-    const {listOfEmojisClicked, score, topScore} = this.state
+  finishGameAndSetTopScore = currentScore => {
+    console.log(`currentScore ${currentScore}`)
+    const {topScore} = this.state
+    let newTopScore = topScore
 
-    this.setState(prevState => ({
-      listOfEmojisClicked: [...prevState.listOfEmojisClicked, id],
-    }))
+    if (currentScore > topScore) {
+      newTopScore = currentScore
+    }
+    this.setState({topScore: newTopScore, isGameInProgress: false})
+  }
+
+  emojiClicked = id => {
+    const {emojisList} = this.props
+    const {listOfEmojisClicked, score} = this.state
 
     const isEmojiPreviouslyClicked = listOfEmojisClicked.includes(id)
 
-    if (!isEmojiPreviouslyClicked) {
-      this.setState(prevState => ({score: prevState.score + 1}))
+    if (isEmojiPreviouslyClicked) {
+      this.finishGameAndSetTopScore(score)
     } else {
-      this.setState(prevState => ({topScore: prevState.score}))
-    }
-
-    if (isEmojiPreviouslyClicked || score === 11) {
-      let newTopScore = topScore
-      if (score > newTopScore) {
-        newTopScore = score
+      if (emojisList.length - 1 === listOfEmojisClicked.length) {
+        this.finishGameAndSetTopScore(emojisList.length)
       }
-
-      this.setState({isGameInProgress: false, topScore: newTopScore})
+      this.setState(prevState => ({score: prevState.score + 1}))
+      this.setState(prevState => ({
+        listOfEmojisClicked: [...prevState.listOfEmojisClicked, id],
+      }))
     }
-
-    console.log(isEmojiPreviouslyClicked)
   }
 
   renderScoreCard = () => {
@@ -80,11 +82,6 @@ class EmojiGame extends Component {
 
   render() {
     const {isGameInProgress, listOfEmojisClicked, score, topScore} = this.state
-
-    console.log(listOfEmojisClicked)
-
-    console.log(`score ${score}`)
-    console.log(`top score ${topScore}`)
 
     return (
       <div className="game-container">

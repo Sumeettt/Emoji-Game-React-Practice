@@ -2,9 +2,29 @@ nav {
   background-color: #ffffff33;
   display: flex;
   justify-content: space-between;
-  padding-left: 40px;
-  padding-right: 40px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.emoji-logo {
+  height: 25px;
+  width: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .emoji-logo {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 .game-logo-title {
@@ -13,9 +33,15 @@ nav {
 }
 
 .game-title {
-  font-size: 20px;
+  font-size: 15px;
   font-family: roboto;
   color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .game-title {
+    font-size: 25px;
+  }
 }
 
 .score-container {
@@ -23,14 +49,27 @@ nav {
 }
 
 .score-text {
-  font-size: 20px;
+  font-size: 15px;
   font-family: roboto;
   color: #ffffff;
 }
 
+@media screen and (min-width: 768px) {
+  .score-text {
+    font-size: 20px;
+  }
+}
+
 .top-score-text {
-  font-size: 20px;
+  font-size: 15px;
   font-family: roboto;
   color: #ffffff;
-  margin-left: 25px;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .top-score-text {
+    font-size: 20px;
+    margin-left: 25px;
+  }
 }

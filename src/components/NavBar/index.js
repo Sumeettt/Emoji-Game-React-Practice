@@ -8,6 +8,7 @@ const NavBar = props => {
     <nav>
       <div className="game-logo-title">
         <img
+          className="emoji-logo"
           src="https://assets.ccbp.in/frontend/react-js/game-logo-img.png"
           alt="emoji logo"
         />
